@@ -12,6 +12,7 @@ import (
 	"strings"
 	"time"
 	"os"
+	"strconv"
 	
 	"github.com/abadojack/whatlanggo"
 	"github.com/gin-contrib/cors"
