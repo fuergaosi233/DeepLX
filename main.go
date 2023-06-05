@@ -11,7 +11,8 @@ import (
 	"net/http"
 	"strings"
 	"time"
-
+	"os"
+	
 	"github.com/abadojack/whatlanggo"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
@@ -21,8 +22,12 @@ import (
 var port int
 
 func init() {
+	portStr := os.Getenv("PORT")
+	defaultPort, err := strconv.Atoi(portStr)
+	if err != nil {
+	    defaultPort = 1188 // 默认端口号
+	}
 	const (
-		defaultPort = 1188
 		usage       = "set up the port to listen on"
 	)
 
